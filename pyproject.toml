@@ -3,6 +3,7 @@ requires = ["setuptools>=42", "wheel", "setuptools_scm[toml]>=6.0.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "modtx"
+name = "modmon"
 version = "0.0.0"
 authors = [{ name = "Karam Ravindra", email = "contact@karanravindra.me" }]
+description = "A test"
