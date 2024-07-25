@@ -4,6 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "modmon"
-version = "0.0.0"
+version = "0.0.0-alpha.6"
 authors = [{ name = "Karam Ravindra", email = "contact@karanravindra.me" }]
 description = "A test"
+readme = "README.md"
