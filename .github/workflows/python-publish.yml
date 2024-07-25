@@ -9,11 +9,10 @@
 name: Upload Python Package to PyPI
 
 on:
-  release:
-    types: [published]
-
-permissions:
-  contents: read
+  # release:
+  #   types: [published]
+  push:
+    branches: [main]
 
 jobs:
   pypi-publish:
@@ -26,10 +25,10 @@ jobs:
       id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4.1.7
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v5.1.1
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
@@ -42,7 +41,7 @@ jobs:
         run: python -m build --sdist --wheel --outdir dist/
 
       - name: Publish package distributions to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1.9
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           # api key from github secrets
           username: __token__
